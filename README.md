@@ -1,4 +1,4 @@
-![Web Page](https://cdn.discordapp.com/attachments/860390018936602644/1097057711503454258/image.png)
+![Web Page](https://cdn.discordapp.com/attachments/1096892216930213969/1097810076665917560/image.png)
 # My-Personal-Web
 This repository contains the HTML, CSS, and JavaScript code for Joynal Bokhsho's Profile page. The page displays various details about Joynal Bokhsho and provides links to his social media profiles.
 # Installation
