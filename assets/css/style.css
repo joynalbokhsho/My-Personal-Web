@@ -337,3 +337,48 @@ section.main ul li a:hover {
     from { width: 0 }
     to { width: 100% }
 }
+
+/*Discord RPC STATUS DESIGN*/
+.discord-rpc-status {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    background-color: #7289da;
+    border-radius: 5px;
+    color: #fff;
+    font-family: sans-serif;
+  }
+  
+  .discord-rpc-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .discord-rpc-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .discord-rpc-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .discord-rpc-subtitle {
+    font-size: 12px;
+  }
+  
+  .discord-rpc-game {
+    font-weight: bold;
+  }
+  
+  .discord-rpc-server {
+    font-weight: bold;
+    color: #99aab5;
+  }
+  

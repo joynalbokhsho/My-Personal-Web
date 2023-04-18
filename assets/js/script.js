@@ -77,13 +77,35 @@ window.addEventListener('load', function() {
             discord_name.innerHTML = `${userdata.discord_user.username} <b style="font-size: 14px;">(Jo Jo)</b>`
 
             //my custom edited element
-            //if (userdata.activities.some(activity => activity.type === 0)) {
-                //let status_activity1 = document.getElementById("dcactivityname");
-                //status_activity1.innerText = `Using ${userdata.activities[1].name}`;
-              //} else {
-                //let status_activity1 = document.getElementById("dcactivityname");
-                //status_activity1.innerText = "Inactive";
-             // }
+            let discord_Rpc = document.getElementById("rpc");
+            if (userdata.activities[1]) {
+              const appId = userdata.activities[1].application_id;
+              let largeImage = userdata.activities[1].assets.large_image;
+              if (largeImage.startsWith("mp:")) {
+                largeImage = largeImage.slice(3); // Remove "mp:" from the beginning
+              }
+              const primaryUrl = `https://cdn.discordapp.com/app-assets/${appId}/${largeImage}.png`;
+              const fallbackUrl = `https://media.discordapp.net/${largeImage}`;
+              discord_Rpc.innerHTML = `<h3>Now Playing</h3>
+                <div class="discord-card">
+                  <img src="${primaryUrl}" alt="Discord RPC Icon" style="width: 72px; height:72px;">
+                  <div class="details" style="text-align: left;">
+                    ${userdata.activities[1].name ? `<h3>${userdata.activities[1].name}</h3>` : ''}
+                    ${userdata.activities[1].details ? `<p>${userdata.activities[1].details}</p>` : ''}
+                    ${userdata.activities[1].state ? `<p>${userdata.activities[1].state}</p>`  : ''}
+                  </div>
+                </div>`;
+              const img = discord_Rpc.querySelector("img");
+              img.onerror = function() {
+                img.src = fallbackUrl;
+              };
+            } else {
+              discord_Rpc.innerHTML = `${userdata.kv.rpc}`;
+            }
+            
+            
+
+
             // custom edited element
 
             let spotify_activity = document.getElementById("spotifyActivity");
